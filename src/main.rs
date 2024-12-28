@@ -1,5 +1,6 @@
 fn main() {
-    vector_collection_example()
+    vector_collection_example();
+    string_collection_example();
 }
 
 fn vector_collection_example() {
@@ -18,4 +19,20 @@ fn vector_collection_example() {
     for i in &v { // iterate through v and grab immutable references to each value, can also specify as mutable references if vector is declared as mut
         println!("{i}");
     }
+}
+
+fn string_collection_example() {
+    let s = String::from("hello");
+    let s2 = String::from("world");
+    let s3 = format!("{s} {s2}!"); // format concatenates the strings without moving ownership
+
+    println!("{s}{s2}{s3}"); // this wouldn't have compiled if s or s2 ownership had moved to s3
+
+    for c in s.chars() {
+        println!("{c}");
+    }
+
+    for b in s.bytes() {
+        println!("{b}");
+    } // can iterate over strings by char or by byte
 }
