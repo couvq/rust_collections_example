@@ -1,4 +1,9 @@
 fn main() {
+    vector_collection_example()
+}
+
+fn vector_collection_example() {
+    println!("Starting vector example...\n");
     let v = vec![1, 2, 3, 4, 5];
 
     let third: &i32 = &v[2]; // panics if we access something outside of the vector range
